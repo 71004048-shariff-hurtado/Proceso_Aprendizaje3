@@ -7,8 +7,7 @@ const userSchema = new mongoose.Schema({
     }, 
     profesor:{
         type: String,
-        required: true,
-        unique: true
+        required: true
     }, 
     precio:{
         type: Number,

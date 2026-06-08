@@ -1,29 +1,70 @@
-import { useEffect, useState } from "react";
+import { useCursos } from '../hooks/useCursos';
+import '../styles/Usuario.css';
 
 export default function Usuario() {
+  const { usuarioActual, inscripciones } = useCursos();
 
-    const [usuario, setUsuario] = useState([]);
-
-    useEffect(() => {
-        async function cargarDatos() {
-            const res = await fetch("https://jsonplaceholder.typicode.com/users");
-            const data = await res.json();
-
-            setUsuario(data);
-    }
-
-        cargarDatos();
-}, []);
-
-    return (
-        <div>
-            <h2>Lista de usuarios</h2>
-            <ul>
-                {usuario.map((u) => (
-                    <li key={u.id}>{u.name}</li>
-                ))}
-            </ul>
+  return (
+    <div className="usuario-container">
+      <div className="usuario-card">
+        <div className="usuario-header">
+          <div className="usuario-avatar">
+            {usuarioActual.nombre.substring(0, 2).toUpperCase()}
+          </div>
+          <div className="usuario-info-header">
+            <h1 className="usuario-nombre">{usuarioActual.nombre}</h1>
+            <p className="usuario-rol">👨‍🎓 {usuarioActual.rol}</p>
+            <p className="usuario-email">📧 {usuarioActual.email}</p>
+          </div>
         </div>
-    );
+
+        <div className="usuario-stats">
+          <div className="stat-item">
+            <span className="stat-valor">{inscripciones.length}</span>
+            <span className="stat-label">Cursos Inscritos</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-valor">
+              {inscripciones.reduce((acc, i) => acc + i.progreso, 0) / inscripciones.length || 0}%
+            </span>
+            <span className="stat-label">Progreso Promedio</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-valor">
+              {inscripciones.filter(i => i.estado === 'Completado').length}
+            </span>
+            <span className="stat-label">Completados</span>
+          </div>
+        </div>
+
+        <div className="usuario-acciones">
+          <button className="btn-perfil">✏️ Editar Perfil</button>
+          <button className="btn-perfil">🔐 Cambiar Contraseña</button>
+          <button className="btn-perfil btn-salir">🚪 Cerrar Sesión</button>
+        </div>
+      </div>
+    </div>
+  );
 }
+
+/*
+COMENTARIOS DEL COMPONENTE Usuario:
+
+Características:
+- ✓ Muestra perfil del usuario actual
+- ✓ Datos obtenidos desde Context API (useCursos)
+- ✓ Estadísticas del usuario
+- ✓ Acciones de perfil
+- ✓ Diseño responsive
+- ✓ Reutiliza datos globales sin props
+
+Datos mostrados:
+- Nombre del usuario
+- Rol (Estudiante)
+- Email
+- Total de cursos inscritos
+- Progreso promedio
+- Cursos completados
+*/
+
 

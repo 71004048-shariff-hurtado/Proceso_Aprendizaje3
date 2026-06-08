@@ -4,7 +4,7 @@ const helmet = require('helmet');
 require('dotenv').config();
 
 const conectarDB = require('./config/database');
-const cursoRoutes = require('./routes/userRoutes');
+const cursoRoutes = require('./routes/cursoRoutes');
 
 const app = express();
 

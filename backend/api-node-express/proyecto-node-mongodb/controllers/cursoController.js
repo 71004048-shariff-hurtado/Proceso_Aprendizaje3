@@ -1,4 +1,4 @@
-const User = require('../models/Curso');
+const Curso = require('../models/Curso');
 
 exports.createCurso = async (req, res) => {
     
@@ -17,7 +17,7 @@ exports.listarCursos = async (req, res) => {
 
     try {
         const cursos = await Curso.find();
-        res.json(users);
+        res.json(cursos);
     } catch (error) {
         res.status(500).json({ 
             error: error.message 
@@ -28,11 +28,12 @@ exports.listarCursos = async (req, res) => {
 exports.actualizarCurso = async (req, res) => {
 
     try {
-        const actualizado = await User.findByIdAndUpdate(
+        const actualizado = await Curso.findByIdAndUpdate(
             req.params.id,
             req.body,
             {new: true}
         );
+        res.json(actualizado);
     } catch (error) {
         res.status(400).json({
             error: error.message
@@ -42,7 +43,7 @@ exports.actualizarCurso = async (req, res) => {
 
 exports.eliminarCurso = async (req, res) => {
 
-    try {
+    try {Curso
         await User.findByIdAndDelete(req.params.id);
         res.json({ message: "Curso eliminado" });
     } catch (error) {

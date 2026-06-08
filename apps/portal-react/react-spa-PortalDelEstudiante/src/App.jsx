@@ -1,26 +1,41 @@
-import {Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { CursosProvider } from "./context/CursosContext";
 import CursosDelEstudiante from "./pages/CursosDelEstudiante";
 import CatalogoCursos from "./pages/CatalogoCursos";
 import Usuario from "./components/Usuario";
 import Navbar from "./components/Navbar";
-
+import './App.css';
 
 export default function App() {
   return (
-   <>
-   <Navbar></Navbar>
-   <Routes>
-   <Route path="/" element={<CursosDelEstudiante></CursosDelEstudiante>}>Cursos del estudiante</Route>
-   <Route path="/catalogocursos" element={<CatalogoCursos></CatalogoCursos>}>Catalogo de cursos</Route>
-   <Route path="/usuario" element={<Usuario></Usuario>}>Usuarios</Route>
-   </Routes>
-   </>
+    <CursosProvider>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<CursosDelEstudiante />} />
+        <Route path="/catalogocursos" element={<CatalogoCursos />} />
+        <Route path="/usuario" element={<Usuario />} />
+      </Routes>
+    </CursosProvider>
   );
 }
 
-// Dentro de  return();    se coloca lo que se va mostrar al usuario (lo que va retornar)
+/*
+COMENTARIOS DE LA APLICACIÓN:
 
+Estructura Global:
+- ✓ CursosProvider envuelve toda la aplicación
+- ✓ Contexto API disponible en todos los componentes
+- ✓ React Router configurado con 3 rutas principales
+- ✓ Navbar es persistente en todas las vistas
 
+Rutas disponibles:
+- "/" → CursosDelEstudiante (HOME - Mis Inscripciones)
+- "/catalogocursos" → CatalogoCursos (Catálogo con filtros)
+- "/usuario" → Usuario (Perfil del estudiante)
 
-// Desde ahora para trabajar con paginas dentro del navegador se abre el archivo main.jsx que está en la carpeta src.
+Navegación SPA:
+- Sin recarga de página entre vistas
+- Cambio fluido de contenido
+- Menú responsivo en móviles
+*/
 
