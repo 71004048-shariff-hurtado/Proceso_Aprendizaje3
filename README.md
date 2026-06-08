@@ -1,2 +1,0 @@
-# Proceso_Aprendizaje3
-Desarrollo de la PA3_Programacion_Web_Avanzada
