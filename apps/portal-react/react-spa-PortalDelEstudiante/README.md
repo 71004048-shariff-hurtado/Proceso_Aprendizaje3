@@ -256,4 +256,7 @@ R: Las inscripciones se guardan en la memoria de la aplicación. Si recargas, se
 
 ---
 
+![alt text](<Captura de pantalla 2026-06-09 205925.png>)
+
+![alt text](<Captura de pantalla 2026-06-09 210035.png>)
 
