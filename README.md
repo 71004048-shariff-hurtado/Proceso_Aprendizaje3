@@ -51,12 +51,6 @@ Deberías ver números de versión en ambos casos.
 
 Abre una terminal (PowerShell, CMD o bash) y navega a la carpeta del proyecto:
 
-```bash
-cd c:\Users\SERGIO CASIQUE\Desktop\PA3\Proceso_Aprendizaje3\apps\portal-react\react-spa-PortalDelEstudiante
-```
-
-O si estás en otra ruta, reemplaza la ruta anterior con la correcta en tu computadora.
-
 ### Paso 2: Instalar las dependencias
 
 Ejecuta este comando para descargar todas las librerías que necesita la aplicación:
