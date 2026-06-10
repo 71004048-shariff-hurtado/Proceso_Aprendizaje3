@@ -262,9 +262,3 @@ R: Las inscripciones se guardan en la memoria de la aplicación. Si recargas, se
 ✅ Código limpio y bien estructurado  
 ✅ Fácil de modificar y extender
 
----
-
-**Última actualización**: 9 de Junio de 2026  
-**Estado**: ✅ Listo para usar
-
-
