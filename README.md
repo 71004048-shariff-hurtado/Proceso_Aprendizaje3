@@ -270,7 +270,7 @@ R: Las inscripciones se guardan en la memoria de la aplicación. Si recargas, se
 
 ---
 
-**Última actualización**: 8 de Junio de 2026  
+**Última actualización**: 9 de Junio de 2026  
 **Estado**: ✅ Listo para usar
 
 
