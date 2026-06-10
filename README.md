@@ -6,7 +6,9 @@ INTEGRANTES:
 - SERGIO QUISPILLOCLLA (100%)
 - VICTOR CHAVEZ AGUILAR (100%)
 
+ # LINK DEL VIDEO DE YOUTUBE: https://youtu.be/DtRQ2g_fx_8
 
+-----------------------------------------------------------------------
 
 Aplicación web desarrollada en **React** que permite a estudiantes explorar un catálogo de cursos, inscribirse, y gestionar sus cursos. La aplicación es una **Single Page Application (SPA)**, lo que significa que funciona sin recargar la página al navegar entre secciones.
 
